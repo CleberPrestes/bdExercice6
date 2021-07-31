@@ -30,5 +30,14 @@ public interface FuncRepository extends JpaRepository<FuncEntity, Long> {
     
     @Query(value = "select * from funcionario where salario > ?1", nativeQuery = true)
     List<FuncEntity> findByPay(Long pay);
+    
+    
+    @Query(name = "FuncEntity.byDependents")
+    List<FuncEntity> findByDepNamedQuery(Integer idade);
+    
+    @Query(name = "FuncEntity.byPartOfName")
+    List<FuncEntity> findByPartOfNameNativeQuery(String nome);
+    
+    
 
 }

@@ -202,6 +202,25 @@ public class AtivcincoApplication {
 			log.info("");
 			
 			
+			// Atividade6 ex 009
+			log.info("Funcionarios por Departamento NamedQuery");
+			log.info("-------------------------------"); 
+			log.info(funcService.findByDepNamedQuery(3));
+			log.info("");
+			
+			
+			// Atividade6 ex 010
+			log.info("Funcionarios por parte do nome NativeQuery");
+			log.info("-------------------------------"); 
+			log.info(funcService.findByPartNameNativeQuery("ine"));
+			log.info("");
+			
+			
+			
+		
+			
+			
+			
 			/*
 			 * 
 			 * 

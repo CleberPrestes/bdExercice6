@@ -4,12 +4,20 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
+
 @Entity
 @Table(name = "Funcionario")
+@NamedQuery(name = "FuncEntity.byDependents",
+query = "from FuncEntity f where f.dependents = ?1")
+@NamedNativeQuery(name = "FuncEntity.byPartOfName",
+query = "select * from funcionario where funcionario.nome like '%?%'",
+resultClass = FuncEntity.class)
 public class FuncEntity extends AbstractPersistable<Long> {
 
 	@Column(name = "nome", length = 64, nullable = true)

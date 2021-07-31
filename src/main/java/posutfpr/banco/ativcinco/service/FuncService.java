@@ -93,4 +93,14 @@ public class FuncService {
 		return funcRepository.findByPay(valor);
 	}
 	
+	public List<FuncEntity> findByDepNamedQuery(Integer valor) {
+		return funcRepository.findByDepNamedQuery(valor);
+	}
+	
+	
+	public List<FuncEntity> findByPartNameNativeQuery(String name) {
+		return funcRepository.findByPartOfNameNativeQuery(name);
+	}
+	
+	
 }
