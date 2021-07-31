@@ -33,11 +33,11 @@ public interface FuncRepository extends JpaRepository<FuncEntity, Long> {
     
     
     @Query(name = "FuncEntity.byDependents")
-    List<FuncEntity> findByDepNamedQuery(Integer idade);
+    List<FuncEntity> findByDepNamedQuery(Integer qtdDepend);
     
     @Query(name = "FuncEntity.byPartOfName")
     List<FuncEntity> findByPartOfNameNativeQuery(String nome);
     
-    
+       
 
 }

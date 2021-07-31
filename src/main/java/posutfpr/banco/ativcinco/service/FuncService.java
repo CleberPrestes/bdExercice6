@@ -98,8 +98,11 @@ public class FuncService {
 	}
 	
 	
-	public List<FuncEntity> findByPartNameNativeQuery(String name) {
-		return funcRepository.findByPartOfNameNativeQuery(name);
+	public List<FuncEntity> findByPartNameNativeQuery(String nome) {
+		
+		nome = "%" + nome +"%";
+		System.out.println("O que foi recebido no service "+ nome);
+		return funcRepository.findByPartOfNameNativeQuery(nome);
 	}
 	
 	

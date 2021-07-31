@@ -12,6 +12,7 @@ import org.springframework.data.domain.Page;
 
 import posutfpr.banco.ativcinco.entity.DepartamentEntity;
 import posutfpr.banco.ativcinco.entity.FuncEntity;
+import posutfpr.banco.ativcinco.repository.FuncRepository;
 import posutfpr.banco.ativcinco.service.DepartamentService;
 import posutfpr.banco.ativcinco.service.FuncService;
 
@@ -209,10 +210,12 @@ public class AtivcincoApplication {
 			log.info("");
 			
 			
+			
+			
 			// Atividade6 ex 010
-			log.info("Funcionarios por parte do nome NativeQuery");
-			log.info("-------------------------------"); 
-			log.info(funcService.findByPartNameNativeQuery("ine"));
+			log.info("Funcionarios por parte do nome NamedNativeQuery");
+			log.info("-------------------------------");
+			log.info(funcService.findByPartNameNativeQuery("er"));
 			log.info("");
 			
 			

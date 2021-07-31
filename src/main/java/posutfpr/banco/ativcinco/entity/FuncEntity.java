@@ -1,5 +1,7 @@
 package posutfpr.banco.ativcinco.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -9,15 +11,19 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
+import org.springframework.data.jpa.repository.Query;
 
 
 @Entity
 @Table(name = "Funcionario")
 @NamedQuery(name = "FuncEntity.byDependents",
 query = "from FuncEntity f where f.dependents = ?1")
+
 @NamedNativeQuery(name = "FuncEntity.byPartOfName",
-query = "select * from funcionario where funcionario.nome like '%?%'",
+query = "select * from  funcionario where nome like ?1", 
 resultClass = FuncEntity.class)
+
+
 public class FuncEntity extends AbstractPersistable<Long> {
 
 	@Column(name = "nome", length = 64, nullable = true)
@@ -32,6 +38,7 @@ public class FuncEntity extends AbstractPersistable<Long> {
 	@Column(name = "cargo", length = 64, nullable = true)
 	private String responsibility;
 
+	
 	
 	@ManyToOne
 	@JoinColumn(name = "dep_id")
